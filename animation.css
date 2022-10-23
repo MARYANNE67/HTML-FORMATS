@@ -1,0 +1,70 @@
+/*.container{
+   transform:translate(40px,100px);
+    transform:rotate(45deg);
+    height: 300px;
+    width: 500px;
+    background-color: blue;
+   padding:150px
+}
+.rotate{
+    background-color: green;
+    height: 300px;
+    width: 250px;
+    transform:rotate(45deg)
+    transform:skew(30deg)
+}
+.trans{
+    background-color: orange;
+    height: 300px;
+    width: 250px;
+    transform:rotate(-deg);
+    transform:skewX(-40deg);
+}
+.trans:hover{
+    transform:rotate(45deg);
+    transition: all 2s ease-out 3s ;
+    width: 100px;
+    
+}*/
+
+@keyframes myAnimation {
+  0% {
+    left: 0px;
+    top: 0px;
+    background-color: blue;
+  }
+  25% {
+    left: 100px;
+    top: 0px;
+    background-color: gray;
+  }
+  50% {
+    left: 100px;
+    top: 200px;
+    background-color: brown;
+  }
+  75% {
+    left: 0px;
+    top: 200px;
+    background-color: purple;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+    background-color: blue;
+  }
+}
+
+.box {
+  background-color: blue;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 200px;
+  width: 200px;
+  border-radius: 7px;
+  animation-name: myAnimation;
+  animation-duration: 4s;
+  animation-iteration-count: 2;
+  animation-direction: reverse;
+}
