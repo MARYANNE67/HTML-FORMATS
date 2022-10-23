@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--<link rel="stylesheet" href="float.css">-->
+    <link rel="stylesheet" href="flex.css" />
+    <!---- <link rel="stylesheet" href="grid.css">-->
+    <link rel="stylesheet" href="style2.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style2.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Travel form</title>
+    <style>
+      body {
+        padding-left: 10px;
+      }
+      li {
+        list-style-type: lower-roman;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="about.html" method="post" target="post" name="Travel form">
+      <h1>Travel reservation form</h1>
+      <br />
+      <br />
+
+      <b
+        ><p>*denotes mandatory</p>
+        <br />
+        <br
+      /></b>
+
+      <label for="12"> Full name*:</label> <br />
+      <input type="text" name="full name" id="12" manlength="40" required  autofocus  />
+      <br />
+      <br />
+
+      
+      <input list="92" name="browsers">
+      <datalist id="92">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+   <br><br>
+
+      <label for="22"> Email address*: </label> <br />
+      <input
+        type="email "
+        name="Email"
+        id="22"
+        placeholder="google@gmail.com "
+        required
+        multiple
+      />
+      <br />
+      <br />
+
+      <label for="32">Select Tour Package* :</label> <br />
+      <select name="Country" id="32" required>
+        <option value="GA">goa</option>
+        <option value="NG">Nigeria</option>
+        <option value="CA">Canada</option>
+      </select>
+      <br />
+      <br />
+     
+        <label for="42">Arrival date*:</label> <br />
+        <input type="date" name="Arrival date" id="42" required />
+        <br />
+        <br />
+
+        <label for="52">Number of persons*:</label> <br />
+        <input type="text" name="Number of persons" id="52" required   />
+        <br />
+        <br />
+      
+      <label>What would you want to avail</label> <br />
+      Boarding <input type="checkbox" value="Boarding" /> <br />
+      Fooding <input type="checkbox" value=" Fooding" /> <br />
+      Sight seeing <input type="checkbox" value="Sight seeing" /> <br />
+      <br />
+
+      <label for="62">Discount Coupon code </label> <br />
+      <input type="text" id="62" />
+      <br />
+      <br />
+
+      <label for="72">Addition documents</label> <br />
+      <input type="file" name="files" id="72" multiple />
+      <br />
+      <br />
+
+      <label for="82">Zip code</label> <br />
+      <input
+        type="text"
+        id="82"
+        name="Zip code"
+        required
+        pattern="a-z"
+        title="three number zip code"
+      />
+      <br />
+      <br />
+
+      <label for="country_code">Country code:</label> <br />
+      <input
+        type="text"
+        id="country_code"
+        name="country_code"
+        pattern="[A-Za-z]{3}"
+        title="Three letter country code"
+      />
+      <br />
+      <br />
+
+      <label for="">Terms and conditions</label> <br />
+      <label for="72">I agree</label>
+      <input type="radio" name="termandcondition" id="72" value="Agreed" required/>
+      <label for="82">I disagree</label>
+      <input type="radio" name="termandcondition" id="82" value="Disagree" />
+      <br />
+      <br />
+
+      <input type="submit" value="submit" />
+      <button type="button" onclick=" alert('you clicked me')">Click me</button>
+      
+    </form>
+  </body>
+</html>
