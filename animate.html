@@ -50,18 +50,41 @@
             h2{
                 animation-fill-mode: both;
                 /*how many times*/
-                animation-iteration-count: 3;
                 background-color: red;
                 position: relative;
                 animation-name:animate;
-                animation-duration: 5s;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+  
                
             }
         </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                h2 = document.querySelector('h2');
+                   // Pause Animation by default
+                h2.style.animationPlayState = 'paused';
+
+                document.querySelector('button').onclick = ()=>{
+                    if (h2.style.animationPlayState == 'paused'){
+                        h2.style.animationPlayState = 'running'
+                    }
+                    else{
+                        h2.style.animationPlayState = 'paused'
+                    }
+                }
+               
+            }
+            )
+
+        </script>
+
     </head>
     <body>
         <h1>GROW!</h1>
         <h2>ANIMATE!</h2>
+        <button>RUN!</button>
 
         
         <script src="" async defer></script>

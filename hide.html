@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INFINTIE SCROLLING</title>
+        <style>
+            img{
+                padding: 15px;
+                margin-left: 20px;
+            }
+            @keyframes remove{
+                0% {
+                    /* make it opac */
+                    opacity: 1;
+                    height: 100%;
+                    line-height: 100%;
+                    padding: 20px;
+                    margin-bottom: 20px;
+                }
+                75% {
+                /* make it transparent but taking space */
+                    opacity: 0;
+                    height: 100%;
+                    line-height: 100%;
+                    padding: 20px;
+                    margin-bottom: 20px;
+                }
+                100% {
+                /* make it transparent but not taking space */
+                    opacity: 0;
+                    height: 0px;
+                    line-height: 0px;
+                    padding: 0px;
+                    margin-bottom: 0px;
+                }
+            }
+
+            div{
+                width: 100%;
+                background-color: greenyellow;
+                display: grid;
+                grid-template-columns: auto 9%;
+                margin-bottom: 20px;
+                animation-name: remove;
+                animation-duration: 4s;
+                animation-fill-mode: forwards;
+                animation-play-state: paused;
+            }
+        </style>
+
+        <script>
+                // Start with first post
+                let counter = 1;
+
+                // Load posts 20 at a time
+                const quantity = 20;
+        
+            document.addEventListener('DOMContentLoaded', addPost);
+
+            document.addEventListener('click', event=>{
+                //the cause of the event
+                const element = event.target;
+
+                if (element.id === 'hide'){
+                     element.parentElement.style.animationPlayState ='running';
+                     element.parentElement.addEventListener('animationend',()=>element.parentElement.remove())
+                    
+                }
+            });
+
+            //WHEN WINDOW IS AT THE END LOAD MORE PAGES 
+            window.onscroll=()=>{
+            if (window.innerHeight +window.scrollY  >= document.body.offsetHeight){
+                    addPost();
+            }
+  }
+
+             function addPost()
+             {
+                const start = counter;
+                const end = start + quantity - 1;
+                counter = end + 1;
+
+                for(var i =start; i < end+1 ; i++)
+                {   
+
+                    h1 = document.createElement('h2');
+                    h1.innerHTML = `Container ${i}`;
+                   
+
+                    container=document.createElement('div');
+                    container.id =`div-container-${i}`
+
+                    document.querySelector('body').append(container);
+                    document.querySelector(`#div-container-${i}`).appendChild(h1);
+
+                    button = document.createElement('button');
+                    button.innerHTML ='hide';
+                    button.id = 'hide'
+                    document.querySelector(`#div-container-${i}`).appendChild(button);
+
+                };
+            }
+
+              
+        </script>
+    </head>
+<body>
+
+
+<h1>The p element</h1>
+
+
+</body>
+</html>
