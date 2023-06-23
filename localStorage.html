@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script>
+            if(!localStorage.getItem('counter')){
+                localStorage.setItem('counter', 0);
+            }
+                //SAVE THE COUNT VARIABLE IN BROWSER SO WHEN NEXT THE WEBSITE IS LOADED IT STARTS FROM WHERE IT STOPPED
+            function count(){
+                let counter =localStorage.getItem('counter')
+                counter++;
+                document.querySelector('h1').innerHTML = counter;
+                localStorage.setItem('counter', counter)
+            };
+
+            document.addEventListener('DOMContentLoaded', function(){
+                document.querySelector('button').onclick = count;
+            })
+            //call function ever 1000milseconds = 1 seconds
+          setInterval(count,1000)
+        </script>
+    </head>
+    <body>
+      
+
+        <h1></h1>
+            <button>Count</button>
+        
+        
+        <script src="" async defer></script>
+    </body>
+</html>

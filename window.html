@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INFINTIE SCROLLING</title>
+        <style>
+            img{
+                padding: 15px;
+                margin-left: 20px;
+            }
+        </style>
+
+        <script>
+                // Start with first post
+                let counter = 1;
+
+                // Load posts 20 at a time
+                const quantity = 20;
+        
+            document.addEventListener('DOMContentLoaded', addPost);
+
+            //WHEN WINDOW IS AT THE END LOAD MORE PAGES 
+            window.onscroll=()=>{
+            if (window.innerHeight +window.scrollY  >= document.body.offsetHeight){
+                    addPost();
+            }
+  }
+
+             function addPost()
+             {
+                const start = counter;
+                const end = start + quantity - 1;
+                counter = end + 1;
+
+                for(var i =start; i < end+1 ; i++)
+                {   
+
+                    h1 = document.createElement('h2');
+                    h1.innerHTML = `Container ${i}`;
+                   
+
+                    container=document.createElement('div');
+                    container.id =`div-container-${i}`
+                    document.querySelector('body').append(container);
+                    document.querySelector(`#div-container-${i}`).append(h1);
+              
+                   var h=document.createElement('div');
+                   h.className =`img-container-${i}`
+                   document.querySelector(`#div-container-${i}`).append(h);
+
+                    for (var j=1; j < 5; j++){ 
+                        var img = document.createElement('img')
+                        img.src ='./animal-white-young-1011630.jpg';
+                        img.width = '150';
+                        img.height ='100';
+                        document.querySelector(`.img-container-${i}`).append(img);
+                    }
+                };
+            }
+              
+        </script>
+    </head>
+<body>
+
+
+<h1>The p element</h1>
+
+
+</body>
+</html>
